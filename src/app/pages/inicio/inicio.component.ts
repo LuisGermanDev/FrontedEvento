@@ -6,11 +6,12 @@ import {MatTableModule} from '@angular/material/table';
 import { EventoService } from '../../services/evento.service';
 import { Evento } from '../../interfaces/Evento';
 import { Router } from '@angular/router';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [MatCardModule,MatTableModule],
+  imports: [MatCardModule,MatTableModule,MatButtonModule,MatInputModule],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })

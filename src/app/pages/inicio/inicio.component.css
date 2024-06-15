@@ -3,3 +3,11 @@
     margin-top: 100px;
     width: 70%;
 }
+.salir{
+display: flex;
+justify-content: end;
+padding: 20px;
+}
+*{
+    border: 1px solid black;
+}
