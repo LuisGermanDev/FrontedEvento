@@ -54,5 +54,7 @@ export class LoginComponent {
   registrarse(){
        this.router.navigate(['registro'])
   }
+
+  
 }
 

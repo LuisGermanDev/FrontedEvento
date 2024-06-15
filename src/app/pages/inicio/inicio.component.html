@@ -1,9 +1,14 @@
+<div class="salir">
+     <button mat-flat-button color="warn" (click)="Salir()" style="margin-left:8px">Salir</button>
+</div>
+
 <div class="card-container">
     <mat-card>
          <mat-card-header>
               <mat-card-title>Eventos</mat-card-title>
          </mat-card-header>
          <mat-card-content>
+               
 
               <table mat-table [dataSource]="listaEvento" class="mat-elevation-z8">
 
@@ -38,6 +43,7 @@
                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
               </table>
+              
 
          </mat-card-content>
     </mat-card>

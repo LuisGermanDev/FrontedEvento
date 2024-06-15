@@ -5,6 +5,7 @@ import {MatTableModule} from '@angular/material/table';
 
 import { EventoService } from '../../services/evento.service';
 import { Evento } from '../../interfaces/Evento';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -19,6 +20,8 @@ export class InicioComponent {
     public listaEvento:Evento[]=[];
     public displayedColumns:string[]=["nombre_evento","descripcion","ubicacion","contacto","detalle_fecha"]
     
+    private router = inject(Router);
+
     constructor(){
       this.eventoService.lista().subscribe({
         next:(data)=>{
@@ -32,5 +35,10 @@ export class InicioComponent {
       })
 
     }
+    // funcion salir
+  Salir(){
+    this.router.navigate([''])
+    
+   }
 
 }
