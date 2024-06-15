@@ -1,1 +1,44 @@
-<p>inicio works!</p>
+<div class="card-container">
+    <mat-card>
+         <mat-card-header>
+              <mat-card-title>Eventos</mat-card-title>
+         </mat-card-header>
+         <mat-card-content>
+
+              <table mat-table [dataSource]="listaEvento" class="mat-elevation-z8">
+
+                   
+                   <ng-container matColumnDef="nombre_evento">
+                        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombre_evento}} </td>
+                   </ng-container>
+
+                   
+                   <ng-container matColumnDef="descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                   </ng-container>
+
+                   
+                   <ng-container matColumnDef="ubicacion">
+                        <th mat-header-cell *matHeaderCellDef> ubicacion </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ubicacion}} </td>
+                   </ng-container>
+
+                   <ng-container matColumnDef="contacto">
+                        <th mat-header-cell *matHeaderCellDef> Contacto </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contacto}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="detalle_fecha">
+                        <th mat-header-cell *matHeaderCellDef> Detalle </th>
+                        <td mat-cell *matCellDef="let element"> {{element.detalle_fecha}} </td>
+                    </ng-container>
+
+                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+         </mat-card-content>
+    </mat-card>
+</div>
