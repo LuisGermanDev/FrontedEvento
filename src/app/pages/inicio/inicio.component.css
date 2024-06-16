@@ -32,3 +32,12 @@ mat-card-header{
 .under{
     text-decoration: underline;
 }
+.fecha_tam{
+    width: 200px;
+}
+.tabla{
+    display: flex;
+}
+.btntab{
+    display: flex;
+}
