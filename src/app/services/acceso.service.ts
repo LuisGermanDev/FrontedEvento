@@ -5,6 +5,7 @@ import { Usuario } from '../interfaces/Usuario';
 import { Observable } from 'rxjs';
 import { ResponseAcceso } from '../interfaces/ResponseAcceso';
 import { Login } from '../interfaces/Login';
+import { Evento } from '../interfaces/Evento';
 
 @Injectable({
   providedIn: 'root'
@@ -25,4 +26,8 @@ export class AccesoService {
   validarToken(token: string): Observable<ResponseAcceso> {
     return this.http.get<ResponseAcceso>(`${this.baseUrl}Acceso/ValidarToken?token=${token}`)
   }
+  evento(objeto:Evento):Observable<ResponseAcceso>{
+    return this.http.post<ResponseAcceso>(`${this.baseUrl}Acceso/Evento`,objeto);
+  }
+
 }

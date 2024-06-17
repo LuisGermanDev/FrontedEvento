@@ -1,0 +1,35 @@
+<div class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Registrarse</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="form-custom" [formGroup]="formEvento" >
+        <mat-form-field class="input-custom">
+          <mat-label>Nombre de evento</mat-label>
+          <input matInput formControlName="nombre_evento" />
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Descripcion</mat-label>
+          <input matInput formControlName="descripcion" />
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>ubicacion</mat-label>
+          <input matInput formControlName="ubicacion"/>
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>contacto</mat-label>
+          <input matInput formControlName="contacto"/>
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>detalle_fecha</mat-label>
+          <input matInput formControlName="detalle_fecha"/>
+        </mat-form-field>
+        <div class="flex">
+          <button mat-flat-button (click)="crearEvento()" color="primary">Agregar Evento</button>
+          <button mat-flat-button (click)="volver()" color="warn" style="margin-left: 8px">Volver</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

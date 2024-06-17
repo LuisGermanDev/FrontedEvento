@@ -28,6 +28,7 @@ export class InicioComponent {
         next:(data)=>{
           if(data.value.length>0){
             this.listaEvento=data.value
+            console.log(this.listaEvento);
           }
         },
         error:(error) =>{
@@ -38,8 +39,11 @@ export class InicioComponent {
     }
     // funcion salir
   Salir(){
-    this.router.navigate([''])
+    this.router.navigate(['']);
     
    }
+  CrearEvento(){
+    this.router.navigate(["evento"]);
+  }
 
 }
