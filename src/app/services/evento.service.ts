@@ -5,6 +5,7 @@ import { ResponseEvento } from '../interfaces/ResponseEvento';
 import { Observable } from 'rxjs';
 import { Evento } from '../interfaces/Evento';
 import { HistorialEvento } from '../interfaces/HistorialEvento';
+import { HistorialEventoInd } from '../interfaces/HistorialEventoInd';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,7 @@ export class EventoService {
   EventoHistorial(): Observable<HistorialEvento[]> {
     return this.http.get<HistorialEvento[]>(`${this.baseUrl}HistorialEventoCreador`);
   }
-  
+  EventoHistorialInd(): Observable<HistorialEventoInd[]> {
+    return this.http.get<HistorialEventoInd[]>(`${this.baseUrl}HistorialEventoIndividual`);
+  }
 }

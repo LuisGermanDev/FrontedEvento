@@ -13,10 +13,14 @@
     <div class="card-container">
       <mat-card>
         <mat-card-header>
-          <mat-card-title>Historial de Eventos Creados</mat-card-title>
+          <mat-card-title>Historial de Eventos Subscritos "individuales"</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <table mat-table [dataSource]="listaHistorialEvento" class="mat-elevation-z8">
+          <table mat-table [dataSource]="listaHistorialEventoInd" class="mat-elevation-z8">
+            <ng-container matColumnDef="IDusuario">
+              <th mat-header-cell *matHeaderCellDef>ID Usuario</th>
+              <td mat-cell *matCellDef="let element">{{ element.IDusuario }}</td>
+            </ng-container>
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef>ID Evento</th>
               <td mat-cell *matCellDef="let element">{{ element.id }}</td>

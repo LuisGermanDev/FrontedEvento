@@ -6,55 +6,53 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { EventoService } from '../../services/evento.service';
 import { Router } from '@angular/router';
-import { HistorialEvento } from '../../interfaces/HistorialEvento';
+import { HistorialEventoInd } from '../../interfaces/HistorialEventoInd';
 
 @Component({
   selector: 'app-historial-ev-ind',
   standalone: true,
   imports: [MatCardModule, MatTableModule, MatButtonModule, MatInputModule, CommonModule],
   templateUrl: './historial-ev-ind.component.html',
-  styleUrl: './historial-ev-ind.component.css'
+  styleUrls: ['./historial-ev-ind.component.css']
 })
-export class HistorialEvIndComponent {
+export class HistorialEvIndComponent implements OnInit {
   private eventoService = inject(EventoService); 
-  public listaHistorialEvento: HistorialEvento[] = [];
-  public displayedColumnsHisEvn: string[] = ['id', 'nombreEvento', 'descripcion', 'ubicacion', 'contacto', 'tipo', 'fechaDetalle'];
+  public listaHistorialEventoInd: HistorialEventoInd[] = [];
+  public displayedColumnsHisEvn: string[] = ['id', 'IDusuario', 'nombreEvento', 'descripcion', 'ubicacion', 'contacto', 'tipo', 'fechaDetalle'];
   private router = inject(Router);
-  Pestana: number = 1; 
 
   constructor() {}
 
   ngOnInit(): void {
-    this.obtenerHistorialEvento();
+    this.obtenerHistorialEventoInd();
   }
-  obtenerHistorialEvento(): void {
-    this.eventoService.EventoHistorial().subscribe({
-      next: (data) => {
-        if (data?.length > 0) {
-          this.listaHistorialEvento = data;
+
+  obtenerHistorialEventoInd(): void {
+    this.eventoService.EventoHistorialInd().subscribe({
+      next: (data: HistorialEventoInd[]) => {
+        if (data.length > 0) {
+          this.listaHistorialEventoInd = data;
         } else {
-          this.listaHistorialEvento = [];
+          this.listaHistorialEventoInd = [];
         }
-        console.log(this.listaHistorialEvento);
+        console.log(this.listaHistorialEventoInd);
       },
-      error: (error) => {
+      error: (error: any) => {
         console.error(error.message);
-        this.listaHistorialEvento = [];
+        this.listaHistorialEventoInd = [];
       }
     });
   }
 
-  
-  Eventos(){
+  Eventos() {
     this.router.navigate(['inicio']); 
   }
 
-  HistorialEvento(){
+  HistorialEvento() {
     this.router.navigate(['historial']);
   }
 
-
-  HistorialEventogrupales(){
+  HistorialEventogrupales() {
     this.router.navigate(["HistorialEvGrup"]);
   }
 
