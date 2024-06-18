@@ -3,7 +3,7 @@
     <div><h2>EventSystem</h2></div>
     <div class="evneto-historial">
       <button mat-flat-button color="warn" style="margin-left: 8px">Eventos</button>
-      <button mat-flat-button color="warn" (click)="HistorialEvento()" style="margin-left: 8px">Eventos Creados</button>
+      <button mat-flat-button color="warn" (click)="HistorialEvento()" style="margin-left: 8px">Eventos Creados </button>
       <button mat-flat-button color="warn" (click)="HistorialEventoInviduales()" style="margin-left: 8px">Historial de<br>eventos individuales</button>
       <button mat-flat-button color="warn" (click)="HistorialEventogrupales()" style="margin-left: 8px">Historial de<br>eventos grupales</button>
     </div>
@@ -20,7 +20,7 @@
         <table mat-table [dataSource]="listaEvento" class="mat-elevation-z8">
           <ng-container matColumnDef="nombre_evento">
             <th mat-header-cell *matHeaderCellDef>Nombre</th>
-            <td mat-cell *matCellDef="let element">{{ element.nombre_evento }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.nombre_evento }}</td> 
           </ng-container>
 
           <ng-container matColumnDef="descripcion">
