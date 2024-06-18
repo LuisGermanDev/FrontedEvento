@@ -24,14 +24,22 @@
 
         <mat-form-field class="input-custom">
           <mat-label>Tipo de evento</mat-label>
-          <input matInput formControlName="tipo"/>
-
+          <mat-select formControlName="tipo" required>
+            <mat-option value="" disabled>Seleccione el tipo de evento</mat-option>
+            <mat-option value="individual">Individual</mat-option>
+            <mat-option value="grupal">Grupal</mat-option>
+          </mat-select>
         </mat-form-field>
 
+        <!-- Selector de Fecha -->
         <mat-form-field class="input-custom">
-          <mat-label>detalle_fecha</mat-label>
-          <input matInput type="datetime" formControlName="detalle_fecha"/>
+          <mat-label>Fecha del evento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="detalle_fecha"/>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+
+        
         <div class="flex">
           <button mat-flat-button (click)="crearEvento()" color="primary">Agregar Evento</button>
           <button mat-flat-button (click)="volver()" color="warn" style="margin-left: 8px">Volver</button>
