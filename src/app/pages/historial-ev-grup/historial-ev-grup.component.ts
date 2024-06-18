@@ -7,15 +7,14 @@ import { MatInputModule } from '@angular/material/input';
 import { EventoService } from '../../services/evento.service';
 import { Router } from '@angular/router';
 import { HistorialEvento } from '../../interfaces/HistorialEvento';
-
 @Component({
-  selector: 'app-inicio',
+  selector: 'app-historial-ev-grup',
   standalone: true,
   imports: [MatCardModule, MatTableModule, MatButtonModule, MatInputModule, CommonModule],
-  templateUrl: './historial.component.html',
-  styleUrl: './historial.component.css'
+  templateUrl: './historial-ev-grup.component.html',
+  styleUrl: './historial-ev-grup.component.css'
 })
-export class HistorialComponent {
+export class HistorialEvGrupComponent {
   private eventoService = inject(EventoService); 
   public listaHistorialEvento: HistorialEvento[] = [];
   public displayedColumnsHisEvn: string[] = ['id', 'nombreEvento', 'descripcion', 'ubicacion', 'contacto', 'tipo', 'fechaDetalle'];
@@ -48,14 +47,17 @@ export class HistorialComponent {
   Eventos(){
     this.router.navigate(['inicio']); 
   }
+
+  HistorialEvento(){
+    this.router.navigate(['historial']);
+  }
+
   HistorialEventoInviduales(){
     this.router.navigate(["HistorialEvIn"]);
   }
-  HistorialEventogrupales(){
-    this.router.navigate(["HistorialEvGrup"]);
-  }
 
 
+  
   Salir() {
     this.router.navigate(['']);
   }

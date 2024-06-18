@@ -41,10 +41,10 @@ export class InicioComponent {
       this.router.navigate(['historial']);
     }
     HistorialEventoInviduales(){
-      this.Pestana=3;
+      this.router.navigate(["HistorialEvIn"]);
     }
     HistorialEventogrupales(){
-      this.Pestana=4;
+      this.router.navigate(["HistorialEvGrup"]);
     }
 
     // funcion salir

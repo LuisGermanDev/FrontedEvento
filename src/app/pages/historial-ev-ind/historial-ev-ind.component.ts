@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
 import { HistorialEvento } from '../../interfaces/HistorialEvento';
 
 @Component({
-  selector: 'app-inicio',
+  selector: 'app-historial-ev-ind',
   standalone: true,
   imports: [MatCardModule, MatTableModule, MatButtonModule, MatInputModule, CommonModule],
-  templateUrl: './historial.component.html',
-  styleUrl: './historial.component.css'
+  templateUrl: './historial-ev-ind.component.html',
+  styleUrl: './historial-ev-ind.component.css'
 })
-export class HistorialComponent {
+export class HistorialEvIndComponent {
   private eventoService = inject(EventoService); 
   public listaHistorialEvento: HistorialEvento[] = [];
   public displayedColumnsHisEvn: string[] = ['id', 'nombreEvento', 'descripcion', 'ubicacion', 'contacto', 'tipo', 'fechaDetalle'];
@@ -48,13 +48,15 @@ export class HistorialComponent {
   Eventos(){
     this.router.navigate(['inicio']); 
   }
-  HistorialEventoInviduales(){
-    this.router.navigate(["HistorialEvIn"]);
+
+  HistorialEvento(){
+    this.router.navigate(['historial']);
   }
+
+
   HistorialEventogrupales(){
     this.router.navigate(["HistorialEvGrup"]);
   }
-
 
   Salir() {
     this.router.navigate(['']);
