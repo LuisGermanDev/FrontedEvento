@@ -21,9 +21,16 @@
           <mat-label>contacto</mat-label>
           <input matInput formControlName="contacto"/>
         </mat-form-field>
+
+        <mat-form-field class="input-custom">
+          <mat-label>Tipo de evento</mat-label>
+          <input matInput formControlName="tipo"/>
+
+        </mat-form-field>
+
         <mat-form-field class="input-custom">
           <mat-label>detalle_fecha</mat-label>
-          <input matInput formControlName="detalle_fecha"/>
+          <input matInput type="datetime" formControlName="detalle_fecha"/>
         </mat-form-field>
         <div class="flex">
           <button mat-flat-button (click)="crearEvento()" color="primary">Agregar Evento</button>

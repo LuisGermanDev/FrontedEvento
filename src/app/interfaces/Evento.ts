@@ -3,5 +3,6 @@ export interface Evento{
   descripcion: string,
   ubicacion: string,
   contacto: string,
+  tipo: string,
   detalle_fecha: Date
 }

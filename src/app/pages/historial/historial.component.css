@@ -18,13 +18,13 @@ align-items: center;
     gap: 40px;
 }
 .inicio{
-        height: 100vh;
+    height: 100vh;
     background: url(../../../assets/images/fondosimple.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-mat-card-header{
+.card-header{
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -41,3 +41,62 @@ mat-card-header{
 .btntab{
     display: flex;
 }
+
+
+.card-container {
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+}
+
+.salir {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.evneto-historial {
+    display: flex;
+    gap: 40px;
+}
+
+.inicio {
+    height: 100vh;
+    background: url(../../../assets/images/fondosimple.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.under {
+    text-decoration: underline;
+}
+
+.fecha_tam {
+    width: 200px;
+}
+
+.tabla {
+    display: flex;
+}
+
+.btntab {
+    display: flex;
+}
+
+.table {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+

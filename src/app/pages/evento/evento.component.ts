@@ -29,20 +29,25 @@ export class EventoComponent {
 
 
   public formEvento: FormGroup = this.formBuild.group({
+
+ 
     nombre_evento: ["", Validators.required],
     descripcion: ["", Validators.required],
     ubicacion: ["", Validators.required],
     contacto: ["", Validators.required],
+    tipo: ["", Validators.required],
     detalle_fecha: ["", Validators.required]
   });
   crearEvento() {
     if (this.formEvento.invalid) return;
 
     const objeto: Evento = {
+   
       nombre_evento: this.formEvento.value.nombre_evento,
       descripcion: this.formEvento.value.descripcion,
       ubicacion: this.formEvento.value.ubicacion,
       contacto: this.formEvento.value.contacto,
+      tipo: this.formEvento.value.contacto,
       detalle_fecha: this.formEvento.value.detalle_fecha
     };
 
