@@ -2,45 +2,34 @@
   <div mat-flat-button color="warn" class="salir">
     <div><h2>EventSystem</h2></div>
     <div class="evneto-historial">
-      <h4 class="under">Eventos</h4>
-      <h4>Historial</h4>
+      <button mat-flat-button color="warn" (click)="Eventos()" style="margin-left: 8px">Eventos</button>
+      <button mat-flat-button color="warn" (click)="HistorialEvento()" style="margin-left: 8px">Historial<br>de eventos</button>
+      <button mat-flat-button color="warn" (click)="HistorialEventoInviduales()" style="margin-left: 8px">Historial de<br>eventos individuales</button>
+      <button mat-flat-button color="warn" (click)="HistorialEventogrupales()" style="margin-left: 8px">Historial de<br>eventos grupales</button>
     </div>
-    <button
-      mat-flat-button
-      color="warn"
-      (click)="Salir()"
-      style="margin-left: 8px"
-    >
-      Salir
-    </button>
+    <button mat-flat-button color="warn" (click)="Salir()" style="margin-left: 8px">Salir</button>
   </div>
 
-  <div class="card-container">
+  <div class="card-container" *ngIf="Pestana == 1">
     <mat-card>
       <mat-card-header>
         <mat-card-title>Descubrir Eventos</mat-card-title>
-        <button mat-flat-button color="warn" (click)="CrearEvento()" style="margin-left: 8px">
-          CREAR EVENTO
-        </button>
+        <button mat-flat-button color="warn" (click)="CrearEvento()" style="margin-left: 8px">CREAR EVENTO</button>
       </mat-card-header>
       <mat-card-content>
         <table mat-table [dataSource]="listaEvento" class="mat-elevation-z8">
           <ng-container matColumnDef="nombre_evento">
             <th mat-header-cell *matHeaderCellDef>Nombre</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.nombre_evento }}
-            </td>
+            <td mat-cell *matCellDef="let element">{{ element.nombre_evento }}</td>
           </ng-container>
 
           <ng-container matColumnDef="descripcion">
             <th mat-header-cell *matHeaderCellDef>Descripcion</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.descripcion }}
-            </td>
+            <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
           </ng-container>
 
           <ng-container matColumnDef="ubicacion">
-            <th mat-header-cell *matHeaderCellDef>ubicacion</th>
+            <th mat-header-cell *matHeaderCellDef>Ubicación</th>
             <td mat-cell *matCellDef="let element">{{ element.ubicacion }}</td>
           </ng-container>
 
@@ -49,21 +38,22 @@
             <td mat-cell *matCellDef="let element">{{ element.contacto }}</td>
           </ng-container>
 
+          <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef>Tipo de evento</th>
+            <td mat-cell *matCellDef="let element">{{ element.tipo }}</td>
+          </ng-container>
+
           <ng-container matColumnDef="detalle_fecha">
             <th mat-header-cell *matHeaderCellDef>Detalle</th>
+            <td mat-cell *matCellDef="let element">{{ element.detalle_fecha }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
             <td mat-cell *matCellDef="let element" class="tabla">
-              <div class="fecha_tam">{{ element.detalle_fecha }}</div>
               <div class="btntab">
-                <button mat-flat-button color="warn" style="margin-left: 8px">
-                  Inscribirse
-                </button>
-                <button
-                  mat-flat-button
-                  color="primary"
-                  style="margin-left: 8px"
-                >
-                  Ver
-                </button>
+                <button mat-flat-button color="warn" style="margin-left: 8px">Inscribirse</button>
+                <button mat-flat-button color="primary" style="margin-left: 8px" >Ver</button>
               </div>
             </td>
           </ng-container>
@@ -74,4 +64,60 @@
       </mat-card-content>
     </mat-card>
   </div>
+
+  <div class="card-container" *ngIf="Pestana == 2">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Descubrir Eventos</mat-card-title>
+        <button mat-flat-button color="warn" (click)="CrearEvento()" style="margin-left: 8px">CREAR EVENTO</button>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="listaEvento" class="mat-elevation-z8">
+          <ng-container matColumnDef="nombre_evento">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let element">{{ element.nombre_evento }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+            <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="ubicacion">
+            <th mat-header-cell *matHeaderCellDef>Ubicación</th>
+            <td mat-cell *matCellDef="let element">{{ element.ubicacion }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="contacto">
+            <th mat-header-cell *matHeaderCellDef>Contacto</th>
+            <td mat-cell *matCellDef="let element">{{ element.contacto }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef>Tipo de evento</th>
+            <td mat-cell *matCellDef="let element">{{ element.tipo }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="detalle_fecha">
+            <th mat-header-cell *matHeaderCellDef>Detalle</th>
+            <td mat-cell *matCellDef="let element">{{ element.detalle_fecha }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell *matCellDef="let element" class="tabla">
+              <div class="btntab">
+                <button mat-flat-button color="warn" style="margin-left: 8px">Inscribirse</button>
+                <button mat-flat-button color="primary" style="margin-left: 8px" >Ver</button>
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- <tr mat-header-row *matHeaderRowDef="displayedColumnsHisEvn"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsHisEvn"></tr> -->
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
 </div>
