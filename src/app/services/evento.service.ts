@@ -4,6 +4,7 @@ import { appsettings } from '../settings/appsettings';
 import { ResponseEvento } from '../interfaces/ResponseEvento';
 import { Observable } from 'rxjs';
 import { Evento } from '../interfaces/Evento';
+import { HistorialEvento } from '../interfaces/HistorialEvento';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,9 @@ export class EventoService {
   }
   createEvento(evento: Evento): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}Evento/Nuevo`, evento);
+  }
+  EventoHistorial(): Observable<HistorialEvento[]> {
+    return this.http.get<HistorialEvento[]>(`${this.baseUrl}HistorialEventoCreador`);
   }
   
 }

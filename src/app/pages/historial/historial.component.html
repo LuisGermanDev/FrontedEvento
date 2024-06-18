@@ -1,0 +1,61 @@
+<div class="inicio">
+    <div mat-flat-button color="warn" class="salir">
+      <div><h2>EventSystem</h2></div>
+      <div class="evneto-historial">
+        <button mat-flat-button color="warn" (click)="Eventos()" style="margin-left: 8px">Eventos</button>
+        <button mat-flat-button color="warn" style="margin-left: 8px">Eventos Creados</button>
+        <button mat-flat-button color="warn" (click)="HistorialEventoInviduales()" style="margin-left: 8px">Historial de<br>eventos individuales</button>
+        <button mat-flat-button color="warn" (click)="HistorialEventogrupales()" style="margin-left: 8px">Historial de<br>eventos grupales</button>
+      </div>
+      <button mat-flat-button color="warn" (click)="Salir()" style="margin-left: 8px">Salir</button>
+    </div>
+  
+    <div class="card-container">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Historial de Eventos Creados</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <table mat-table [dataSource]="listaHistorialEvento" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>ID Evento</th>
+              <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+            </ng-container>
+            <ng-container matColumnDef="nombreEvento">
+              <th mat-header-cell *matHeaderCellDef>Nombre</th>
+              <td mat-cell *matCellDef="let element">{{ element.nombreEvento }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="descripcion">
+              <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+              <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="ubicacion">
+              <th mat-header-cell *matHeaderCellDef>Ubicación</th>
+              <td mat-cell *matCellDef="let element">{{ element.ubicacion }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="contacto">
+              <th mat-header-cell *matHeaderCellDef>Contacto</th>
+              <td mat-cell *matCellDef="let element">{{ element.contacto }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="tipo">
+              <th mat-header-cell *matHeaderCellDef>Tipo de evento</th>
+              <td mat-cell *matCellDef="let element">{{ element.tipo }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="fechaDetalle">
+              <th mat-header-cell *matHeaderCellDef>Detalle</th>
+              <td mat-cell *matCellDef="let element">{{ element.fechaDetalle }}</td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsHisEvn"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsHisEvn"></tr>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  

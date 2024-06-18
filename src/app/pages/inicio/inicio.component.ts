@@ -8,7 +8,6 @@ import { Evento } from '../../interfaces/Evento';
 import { Router } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import { HistorialEvento } from '../../interfaces/HistorialEvento';
 @Component({
   selector: 'app-inicio',
   standalone: true,
@@ -21,13 +20,7 @@ export class InicioComponent {
     private eventoService = inject(EventoService); 
     public listaEvento:Evento[]=[];
     public displayedColumns:string[]=["nombre_evento","descripcion","ubicacion","contacto","tipo","detalle_fecha",'acciones']
-
-
-    // public listaHistorial:HistorialEvento[]=[];
-    // public displayedColumnsHisEvn:string[]='NombreEvento','Descripcion','Ubicacion','Contacto','Tipo','FechaDetalle']
-
-    
-    
+ 
     private router = inject(Router);
     Pestana: number = 1; 
     constructor(){
@@ -44,11 +37,8 @@ export class InicioComponent {
       })
 
     }
-    Eventos(){
-      this.Pestana=1;
-    }
     HistorialEvento(){
-      this.Pestana=2;
+      this.router.navigate(['historial']);
     }
     HistorialEventoInviduales(){
       this.Pestana=3;
